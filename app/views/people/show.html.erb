@@ -13,6 +13,8 @@
   <% @person.phone_numbers.each do |phone| %>
     <li><%= phone.number %></li>
     <li><%= phone.number %> <%= link_to('edit', edit_phone_number_path(phone)) %></li>
+    <li><%= link_to 'delete', phone_number_path(phone),
+            :confirm => 'Are you sure?', :method => :delete %></li>
   <% end %>
 </ul>
 
