@@ -12,15 +12,18 @@
 <p>
   <ul>
     <% @person.email_addresses.each do |email| %>
-      <li><%= email.address %></li>
+      <li><%= email.address %>
+        <%= link_to('edit', edit_email_address_path(email)) %>
+        <%= link_to 'delete', email_address_path(email),
+            :confirm => 'Are you sure?', :method => :delete %></li>
       <% end %>
   </ul>
 </p>
 <ul>
   <% @person.phone_numbers.each do |phone| %>
-    <li><%= phone.number %></li>
-    <li><%= phone.number %> <%= link_to('edit', edit_phone_number_path(phone)) %></li>
-    <li><%= link_to 'delete', phone_number_path(phone),
+    <li><%= phone.number %>
+        <%= link_to('edit', edit_phone_number_path(phone)) %>
+        <%= link_to 'delete', phone_number_path(phone),
             :confirm => 'Are you sure?', :method => :delete %></li>
   <% end %>
 </ul>
