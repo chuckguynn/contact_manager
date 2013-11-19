@@ -1,5 +1,5 @@
 class EmailAddressesController < ApplicationController
-  before_filter :lookup_email_address, only: [:edit, :update, :destroy]
+  before_filter :find_resource, only: [:edit, :update, :destroy]
   # GET /email_addresses/new
   # GET /email_addresses/new.json
   def new
@@ -56,10 +56,5 @@ class EmailAddressesController < ApplicationController
       format.html { redirect_to @email_address.contact }
       format.json { head :no_content }
     end
-  end
-
-  private
-  def lookup_email_address
-    @email_address = EmailAddress.find(params[:id])
   end
 end
