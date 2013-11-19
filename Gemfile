@@ -6,6 +6,9 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'unicorn'
+gem 'haml', '~> 3.1.8'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,8 +35,6 @@ group :production do
 end
 
 gem 'jquery-rails'
-
-gem 'haml', '~> 3.1.8'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
