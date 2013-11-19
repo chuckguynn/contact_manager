@@ -1,0 +1,8 @@
+%h1
+  Editing #{@company.name}
+= render 'form'
+%ul.actions
+  %li
+    = link_to 'Show', @company
+    |
+  %li= link_to 'Back', companies_path

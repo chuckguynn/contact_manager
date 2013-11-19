@@ -23,6 +23,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'capybara'
+  gem 'hpricot'
+  gem 'ruby_parser'
 end
 
 group :production do
@@ -30,6 +32,8 @@ group :production do
 end
 
 gem 'jquery-rails'
+
+gem 'haml', '~> 3.1.8'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

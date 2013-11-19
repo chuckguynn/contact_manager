@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %b First name:
+  = @person.first_name
+%p
+  %b Last name:
+  = @person.last_name
+= render 'email_addresses/email_addresses', :email_addresses => @person.email_addresses
+= render 'phone_numbers/phone_numbers', :phone_numbers => @person.phone_numbers
+= link_to 'Add phone number', new_phone_number_path(contact_id: @person.id, contact_type: 'Person')
+|
+\#{link_to 'Add email address', new_email_address_path(contact_id: @person.id, contact_type: 'Person')} |
+\#{link_to 'Edit', edit_person_path(@person)} |
+\#{link_to 'Back', people_path}

@@ -1,0 +1,5 @@
+%h1= @email_address.contact.to_s
+= render 'form'
+= link_to 'Show', @email_address
+|
+\#{link_to 'Back', email_addresses_path}
