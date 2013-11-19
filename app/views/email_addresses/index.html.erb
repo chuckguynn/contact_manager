@@ -12,7 +12,7 @@
 <% @email_addresses.each do |email_address| %>
   <tr>
     <td><%= email_address.address %></td>
-    <td><%= email_address.person_id %></td>
+    <td><%= email_address.contact_id %></td>
     <td><%= link_to 'Show', email_address %></td>
     <td><%= link_to 'Edit', edit_email_address_path(email_address) %></td>
     <td><%= link_to 'Destroy', email_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>

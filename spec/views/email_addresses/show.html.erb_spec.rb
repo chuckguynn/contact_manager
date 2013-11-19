@@ -4,7 +4,7 @@ describe "email_addresses/show" do
   before(:each) do
     @email_address = assign(:email_address, stub_model(EmailAddress,
       :address => "Address",
-      :person_id => 1
+      :contact_id => 1
     ))
   end
 

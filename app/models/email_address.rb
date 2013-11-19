@@ -1,7 +1,7 @@
 class EmailAddress < ActiveRecord::Base
-  attr_accessible :address, :person_id
+  attr_accessible :address, :contact_id, :contact_type
 
-  belongs_to :person
+  validates :address, :contact_id, presence: true
 
-  validates :address, :person_id, presence: true
+  belongs_to :contact, polymorphic: true
 end

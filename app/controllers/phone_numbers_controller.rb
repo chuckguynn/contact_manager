@@ -24,7 +24,7 @@ class PhoneNumbersController < ApplicationController
   # GET /phone_numbers/new
   # GET /phone_numbers/new.json
   def new
-    @phone_number = PhoneNumber.new(contact_id: params[:contact_id])
+    @phone_number = PhoneNumber.new(contact_id: params[:contact_id], contact_type: params[:contact_type])
 
     respond_to do |format|
       format.html # new.html.erb
