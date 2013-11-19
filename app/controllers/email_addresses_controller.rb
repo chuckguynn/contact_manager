@@ -1,26 +1,4 @@
 class EmailAddressesController < ApplicationController
-  # GET /email_addresses
-  # GET /email_addresses.json
-  def index
-    @email_addresses = EmailAddress.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @email_addresses }
-    end
-  end
-
-  # GET /email_addresses/1
-  # GET /email_addresses/1.json
-  def show
-    @email_address = EmailAddress.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @email_address }
-    end
-  end
-
   # GET /email_addresses/new
   # GET /email_addresses/new.json
   def new
