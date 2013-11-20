@@ -4,12 +4,14 @@ require 'capybara/rspec'
 
 describe 'the person view', type: :feature do
 
-  let(:person) { Person.create(first_name: 'John', last_name: 'Doe') }
+  let(:person) { Fabricate :person }
+  let(:user) { person.user }
 
   describe 'phone numbers' do
     before(:each) do
       person.phone_numbers.create(number: "555-1234")
       person.phone_numbers.create(number: "555-5678")
+      login_as(user)
       visit person_path(person)
     end
 
@@ -50,8 +52,9 @@ describe 'the person view', type: :feature do
 
   describe 'email addresses' do
     before(:each) do
-      person.email_addresses.create(address: "bob@tester.com")
-      person.email_addresses.create(address: "tom@tester.com")
+      person.email_addresses.create(address: 'one@example.com')
+      person.email_addresses.create(address: 'two@example.com')
+      login_as(user)
       visit person_path(person)
     end
 

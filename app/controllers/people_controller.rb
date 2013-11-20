@@ -1,9 +1,9 @@
 class PeopleController < ApplicationController
-  before_filter :find_resource, except: [:index,:new, :create]
+  before_filter :lookup_person, except: [:index, :new, :create]
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @people = current_user.people
 
     respond_to do |format|
       format.html # index.html.erb
@@ -75,5 +75,10 @@ class PeopleController < ApplicationController
       format.html { redirect_to people_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def lookup_person
+    @person = current_user.people.find(params[:id])
   end
 end

@@ -46,6 +46,7 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
+    fabrication (2.9.3)
     haml (3.1.8)
     hashie (2.0.5)
     hike (1.2.3)
@@ -151,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
+  fabrication
   haml (~> 3.1.8)
   hpricot
   jquery-rails

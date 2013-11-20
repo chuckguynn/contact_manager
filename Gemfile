@@ -28,6 +28,7 @@ group :development, :test do
   gem 'capybara'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'fabrication'
 end
 
 group :production do

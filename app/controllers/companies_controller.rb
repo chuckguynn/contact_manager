@@ -1,9 +1,9 @@
 class CompaniesController < ApplicationController
-  before_filter :find_resource, except: [:index,:new, :create]
+  before_filter :lookup_company, except: [:index, :new, :create]
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = current_user.companies
 
     respond_to do |format|
       format.html # index.html.erb
@@ -75,5 +75,10 @@ class CompaniesController < ApplicationController
       format.html { redirect_to companies_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def lookup_company
+    @company = current_user.companies.find(params[:id])
   end
 end
